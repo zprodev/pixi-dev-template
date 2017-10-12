@@ -1,4 +1,13 @@
 import * as PIXI from 'pixi.js';
 
-let app = new PIXI.Application(800, 600, {backgroundColor : 0x1099bb});
+const SCREEN_WIDTH = 500;
+const SCREEN_HEIGHT = 500;
+
+let app = new PIXI.Application(SCREEN_WIDTH, SCREEN_HEIGHT, {backgroundColor : 0x1099bb});
 document.body.appendChild(app.view);
+
+let knight = PIXI.Sprite.fromImage('images/knight.png')
+knight.anchor.set(0.5);
+knight.x = SCREEN_WIDTH / 2;
+knight.y = SCREEN_HEIGHT / 2;
+app.stage.addChild(knight);
