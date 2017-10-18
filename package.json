@@ -10,11 +10,11 @@
   },
   "main": "index.js",
   "scripts": {
-    "start": "npm run mkdist && npm run cphtml && npm run cpassets && webpack-dev-server",
-    "build": "npm run mkdist && npm run cphtml && npm run cpassets && webpack",
+    "start": "npm run mkdist && npm run cpassets -- -w & npm run cphtml -- -w & webpack-dev-server",
+    "build": "npm run mkdist && npm run cpassets && npm run cphtml && webpack",
     "mkdist": "rimraf dist/ && mkdirp dist/",
-    "cphtml": "cpx src/index.html dist/",
-    "cpassets": "cpx 'assets/**/*' dist/"
+    "cpassets": "cpx 'assets/**/*' dist/",
+    "cphtml": "cpx src/index.html dist/"
   },
   "dependencies": {
     "pixi.js": "^4.5.6"
