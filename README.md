@@ -1,5 +1,5 @@
 # pixi-dev-template
-Template for PixiJS development
+Template for development of PixiJS
 
 ## Usage
 
@@ -12,7 +12,7 @@ $ npm install
 Start the server
 
 ```
-$ npm run start
+$ npm start
 ```
 
-Let's start coding with ./src/index.js!
+Let's code index.js!
