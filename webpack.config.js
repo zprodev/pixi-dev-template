@@ -35,9 +35,12 @@ module.exports = {
   },
   devtool: 'source-map',
   devServer: {
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },    
     port: 8000,
     open: true,
-    contentBase: path.resolve('dist'),
-    watchContentBase: true
+    watchFiles: ['src/*', 'assets/*'],
+    hot: true,
   }
 };
