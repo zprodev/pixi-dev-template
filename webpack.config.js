@@ -28,6 +28,9 @@ module.exports = {
     ]
   },
   resolve: {
+    fallback: {
+      "path": require.resolve("path-browserify"),
+    },
     modules: [
       path.resolve('src'),
       'node_modules'
