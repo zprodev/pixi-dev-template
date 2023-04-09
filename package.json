@@ -1,11 +1,11 @@
 {
   "private": true,
   "scripts": {
-    "start": "npm-run-all mkdist --parallel \"cpassets -- -w\" \"cphtml -- -w\" webpack-dev",
+    "start": "npm-run-all mkdist --parallel cpassets cphtml webpack-dev",
     "build": "npm-run-all mkdist cpassets cphtml webpack",
     "mkdist": "rimraf dist/ && mkdirp dist/",
-    "cpassets": "cpx \"assets/**/*\" dist/",
-    "cphtml": "cpx src/index.html dist/",
+    "cpassets": "node -e \"require('fs-extra').copySync('assets', 'dist')\"",
+    "cphtml": "node -e \"require('fs-extra').copySync('src/index.html', 'dist/index.html')\"",
     "webpack": "webpack --mode=production",
     "webpack-dev": "webpack-dev-server --mode=development"
   },
@@ -13,7 +13,7 @@
     "pixi.js": "^7.2.4"
   },
   "devDependencies": {
-    "cpx": "^1.5.0",
+    "fs-extra": "^11.1.1",
     "mkdirp": "^2.1.6",
     "npm-run-all": "^4.1.5",
     "rimraf": "^4.4.1",
