@@ -8,7 +8,7 @@ module.exports = {
   ],
   output: {
     path: path.resolve('dist'),
-    filename: 'bundle.js'
+    filename: '[hash].js'
   },
   module: {
   },
